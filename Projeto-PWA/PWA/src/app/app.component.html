@@ -1,0 +1,335 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    box-shadow: 0px 0px 3px black;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .toolbar #youtube-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover,
+  .toolbar #youtube-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+  }
+
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    src="data:image/jpeg;base64,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"
+  />
+  <span>Teste PWA</span>
+</div>
+
+<div class="content" role="main">
+
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+    <img
+    width="40"
+    src="http://www.ead.univem.edu.br/novo/pluginfile.php/1/core_admin/logocompact/300x300/1624630189/ead_digital.png"
+  />
+    <span>{{ title }} está rodando</span>
+  </div>
+
+  <!-- Resources -->
+  
+  <div style="width: 30%;">
+    <h2 style="text-align: center;">Teste de aplicação PWA:</h2>
+    <p style="text-align: justify;">PWA: Progressive Web App é um termo usado para denotar um conjunto de processos de desenvolvimento de software. Ao contrário dos tradicionais aplicativos, um Progressive Web App pode ser visto como uma evolução híbrida entre as páginas da web regulares e um aplicativo móvel(Wikipédia)</p>
+  </div>
+  
+</div>
+
+<router-outlet></router-outlet>
